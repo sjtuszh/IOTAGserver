@@ -17,7 +17,7 @@ def init_db():
         CREATE TABLE IF NOT EXISTS images (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-            image BLOB
+            image_path TEXT
         )
     ''')
     conn.commit()
@@ -32,11 +32,11 @@ def insert_sensor_data(temperature, ec, par):
     conn.commit()
     conn.close()
 
-def insert_image_data(image_data):
+def insert_image_data(image_path):
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
     cursor.execute('''
-        INSERT INTO images (image) VALUES (?)
-    ''', (image_data,))
+        INSERT INTO images (image_path) VALUES (?)
+    ''', (image_path,))
     conn.commit()
     conn.close()

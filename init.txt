@@ -7,15 +7,22 @@ if (!(Test-Path -Path $projectDir)) {
 # 切换到项目目录
 Set-Location -Path $projectDir
 
+# 创建 images 目录
+$imagesDir = "images"
+if (!(Test-Path -Path $imagesDir)) {
+    New-Item -ItemType Directory -Path $imagesDir
+}
+
 # 创建 config.py
 @"
 # config.py
 
-MQTT_BROKER = 'your_mqtt_broker_address'
+MQTT_BROKER = 'localhost'
 MQTT_PORT = 1883
 MQTT_TOPIC_SENSOR = 'sensor/data'
 MQTT_TOPIC_IMAGE = 'sensor/image'
 DATABASE = 'sensor_data.db'
+IMAGES_FOLDER = 'images'
 "@ | Out-File -FilePath "config.py" -Encoding utf8
 
 # 创建 database.py
@@ -39,7 +46,7 @@ def init_db():
         CREATE TABLE IF NOT EXISTS images (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-            image BLOB
+            image_path TEXT
         )
     ''')
     conn.commit()
@@ -54,12 +61,12 @@ def insert_sensor_data(temperature, ec, par):
     conn.commit()
     conn.close()
 
-def insert_image_data(image_data):
+def insert_image_data(image_path):
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
     cursor.execute('''
-        INSERT INTO images (image) VALUES (?)
-    ''', (image_data,))
+        INSERT INTO images (image_path) VALUES (?)
+    ''', (image_path,))
     conn.commit()
     conn.close()
 "@ | Out-File -FilePath "database.py" -Encoding utf8
@@ -69,8 +76,9 @@ def insert_image_data(image_data):
 import paho.mqtt.client as mqtt
 import json
 import base64
+import os
 from database import insert_sensor_data, insert_image_data
-from config import MQTT_BROKER, MQTT_PORT, MQTT_TOPIC_SENSOR, MQTT_TOPIC_IMAGE
+from config import MQTT_BROKER, MQTT_PORT, MQTT_TOPIC_SENSOR, MQTT_TOPIC_IMAGE, IMAGES_FOLDER
 
 def on_connect(client, userdata, flags, rc):
     print(f'Connected with result code {rc}')
@@ -92,7 +100,11 @@ def handle_sensor_data(payload):
 
 def handle_image_data(payload):
     image_data = base64.b64decode(payload)
-    insert_image_data(image_data)
+    image_id = int.from_bytes(image_data[:4], byteorder='big')  # assuming the first 4 bytes are a unique image id
+    image_path = os.path.join(IMAGES_FOLDER, f'image_{image_id}.jpg')
+    with open(image_path, 'wb') as image_file:
+        image_file.write(image_data[4:])
+    insert_image_data(image_path)
 
 client = mqtt.Client()
 client.on_connect = on_connect
@@ -108,9 +120,10 @@ def start_mqtt_client():
 from flask import Flask, jsonify, send_file
 import io
 import sqlite3
-from config import DATABASE
+from config import DATABASE, IMAGES_FOLDER
 from mqtt_client import start_mqtt_client
 from database import init_db
+import os
 
 app = Flask(__name__)
 
@@ -121,7 +134,7 @@ def get_sensor_data():
     cursor.execute('SELECT * FROM sensor_data ORDER BY timestamp DESC')
     rows = cursor.fetchall()
     conn.close()
-
+    
     sensor_data = []
     for row in rows:
         sensor_data.append({
@@ -131,20 +144,20 @@ def get_sensor_data():
             'ec': row[3],
             'par': row[4]
         })
-
+    
     return jsonify(sensor_data)
 
 @app.route('/api/images/<int:image_id>', methods=['GET'])
 def get_image(image_id):
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
-    cursor.execute('SELECT image FROM images WHERE id=?', (image_id,))
+    cursor.execute('SELECT image_path FROM images WHERE id=?', (image_id,))
     row = cursor.fetchone()
     conn.close()
 
     if row:
-        image_data = row[0]
-        return send_file(io.BytesIO(image_data), mimetype='image/jpeg')
+        image_path = row[0]
+        return send_file(image_path, mimetype='image/jpeg')
     else:
         return 'Image not found', 404
 
@@ -158,7 +171,6 @@ if __name__ == '__main__':
 @"
 paho-mqtt
 flask
-pillow
 "@ | Out-File -FilePath "requirements.txt" -Encoding utf8
 
 # 创建 README.md
@@ -166,7 +178,7 @@ pillow
 # MQTT Server
 
 ## 简介
-这是一个基于Python的MQTT服务器后台，用于接收传感器数据和图像，并将其存储在SQLite数据库中。该项目还提供了一个Flask API，用于访问存储的数据。
+这是一个基于Python的MQTT服务器后台，用于接收传感器数据和图像，并将其存储在SQLite数据库中。图像存储在固定文件夹中，数据库中保存图像路径索引。该项目还提供了一个Flask API，用于访问存储的数据。
 
 ## 文件结构
 - `app.py`: 主Flask应用
@@ -175,6 +187,7 @@ pillow
 - `config.py`: 配置文件（如MQTT代理地址、端口等）
 - `requirements.txt`: Python依赖包列表
 - `README.md`: 项目说明文档
+- `images/`: 存储接收到的图像
 
 ## 安装
 ```bash
