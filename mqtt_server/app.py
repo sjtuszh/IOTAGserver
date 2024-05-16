@@ -30,11 +30,11 @@ def get_sensor_data():
     response.headers['Content-Type'] = 'application/json'
     return response
 
-@app.route('/images/<int:image_id>', methods=['GET'])
-def get_image(image_id):
+@app.route('/images', methods=['GET'])
+def get_latest_image():
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
-    cursor.execute('SELECT image_path FROM images WHERE id=?', (image_id,))
+    cursor.execute('SELECT image_path FROM images ORDER BY id DESC LIMIT 1')
     row = cursor.fetchone()
     conn.close()
 
