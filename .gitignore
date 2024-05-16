@@ -1,0 +1,10 @@
+# Ignore all image files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+
+# Ignore all database files
+*.db
+*.sqlite

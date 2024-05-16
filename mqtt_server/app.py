@@ -1,4 +1,4 @@
-﻿from flask import Flask, request, make_response
+﻿from flask import Flask, request, make_response, send_file
 import io
 import sqlite3
 from config import DATABASE, IMAGES_FOLDER
@@ -7,7 +7,6 @@ from database import init_db
 import os
 
 app = Flask(__name__)
-
 
 @app.route('/sensor_data', methods=['GET'])
 def get_sensor_data():
@@ -27,10 +26,9 @@ def get_sensor_data():
             'par': row[4]
         })
 
-    response = make_response(sensor_data)
+    response = make_response({'data': sensor_data})
     response.headers['Content-Type'] = 'application/json'
     return response
-
 
 @app.route('/images/<int:image_id>', methods=['GET'])
 def get_image(image_id):
@@ -42,15 +40,9 @@ def get_image(image_id):
 
     if row:
         image_path = row[0]
-        with open(image_path, 'rb') as image_file:
-            image_data = image_file.read()
-
-        response = make_response(image_data)
-        response.headers['Content-Type'] = 'image/jpeg'
-        return response
+        return send_file(image_path, mimetype='image/jpeg')
     else:
         return 'Image not found', 404
-
 
 if __name__ == '__main__':
     init_db()  # 初始化数据库

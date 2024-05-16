@@ -26,7 +26,7 @@ def handle_sensor_data(payload):
 def handle_image_data(payload):
     image_data = base64.b64decode(payload)
     image_id = int.from_bytes(image_data[:4], byteorder='big')  # assuming the first 4 bytes are a unique image id
-    image_path = os.path.join(IMAGES_FOLDER, f'image_{image_id}.jpg')
+    image_path = os.path.join(IMAGES_FOLDER, f'image_{image_id}.png')
     with open(image_path, 'wb') as image_file:
         image_file.write(image_data[4:])
     insert_image_data(image_path)

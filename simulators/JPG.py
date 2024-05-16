@@ -22,8 +22,11 @@ def capture_and_publish_image():
 
     ret, frame = cap.read()
     if ret:
-        # Encode the frame in JPEG format
-        ret, buffer = cv2.imencode('.jpg', frame)
+        # Resize the frame to 640x480 pixels
+        resized_frame = cv2.resize(frame, (640, 480))
+
+        # Encode the resized frame in JPEG format
+        ret, buffer = cv2.imencode('.png', resized_frame)
         if ret:
             # Create a unique ID for the image
             image_id = struct.pack('>I', int(time.time()))
@@ -45,7 +48,7 @@ def main():
     try:
         while True:
             capture_and_publish_image()
-            time.sleep(300)  # Wait for 5 minutes before capturing the next image
+            time.sleep(5)  # Wait for 5 minutes before capturing the next image
     except KeyboardInterrupt:
         print("Terminating...")
     finally:
