@@ -499,7 +499,7 @@
     <routine id="190" parent="1" name="fts5"/>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-05-15.08:08:42</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-05-16.06:24:45</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1590,82 +1590,172 @@
     <argument id="554" parent="190">
       <Position>1</Position>
     </argument>
-    <table id="555" parent="191" name="images"/>
-    <table id="556" parent="191" name="sensor_data"/>
-    <table id="557" parent="191" name="sqlite_master">
+    <table id="555" parent="191" name="ec_data"/>
+    <table id="556" parent="191" name="images"/>
+    <table id="557" parent="191" name="sensor_data"/>
+    <table id="558" parent="191" name="sqlite_master">
       <System>1</System>
     </table>
-    <table id="558" parent="191" name="sqlite_sequence">
+    <table id="559" parent="191" name="sqlite_sequence">
       <System>1</System>
     </table>
-    <column id="559" parent="555" name="id">
+    <column id="560" parent="555" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>INTEGER|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="560" parent="555" name="timestamp">
-      <DasType>DATETIME|0s</DasType>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-      <Position>2</Position>
-    </column>
-    <column id="561" parent="555" name="image_path">
-      <DasType>TEXT|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <key id="562" parent="555">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="563" parent="556" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="561" parent="555" name="day_1">
       <DasType>INTEGER|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="564" parent="556" name="timestamp">
-      <DasType>DATETIME|0s</DasType>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>2</Position>
     </column>
-    <column id="565" parent="556" name="temperature">
+    <column id="562" parent="555" name="day_3">
       <DasType>INTEGER|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="566" parent="556" name="ec">
+    <column id="563" parent="555" name="day_5">
       <DasType>INTEGER|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="567" parent="556" name="par">
+    <column id="564" parent="555" name="day_7">
       <DasType>INTEGER|0s</DasType>
       <Position>5</Position>
     </column>
-    <key id="568" parent="556">
+    <column id="565" parent="555" name="day_9">
+      <DasType>INTEGER|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="566" parent="555" name="day_11">
+      <DasType>INTEGER|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="567" parent="555" name="day_13">
+      <DasType>INTEGER|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="568" parent="555" name="day_15">
+      <DasType>INTEGER|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="569" parent="555" name="day_17">
+      <DasType>INTEGER|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="570" parent="555" name="day_19">
+      <DasType>INTEGER|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="571" parent="555" name="day_21">
+      <DasType>INTEGER|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="572" parent="555" name="day_23">
+      <DasType>INTEGER|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="573" parent="555" name="day_25">
+      <DasType>INTEGER|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="574" parent="555" name="day_27">
+      <DasType>INTEGER|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="575" parent="555" name="day_29">
+      <DasType>INTEGER|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="576" parent="555" name="day_31">
+      <DasType>INTEGER|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="577" parent="555" name="day_33">
+      <DasType>INTEGER|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <column id="578" parent="555" name="day_35">
+      <DasType>INTEGER|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="579" parent="555" name="day_37">
+      <DasType>INTEGER|0s</DasType>
+      <Position>20</Position>
+    </column>
+    <column id="580" parent="555" name="day_39">
+      <DasType>INTEGER|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <key id="581" parent="555">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="569" parent="557" name="type">
-      <DasType>TEXT|0s</DasType>
+    <column id="582" parent="556" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="570" parent="557" name="name">
-      <DasType>TEXT|0s</DasType>
+    <column id="583" parent="556" name="timestamp">
+      <DasType>DATETIME|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>2</Position>
     </column>
-    <column id="571" parent="557" name="tbl_name">
+    <column id="584" parent="556" name="image_path">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="572" parent="557" name="rootpage">
+    <key id="585" parent="556">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="586" parent="557" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="587" parent="557" name="timestamp">
+      <DasType>DATETIME|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>2</Position>
+    </column>
+    <column id="588" parent="557" name="temperature">
+      <DasType>INTEGER|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="589" parent="557" name="ec">
+      <DasType>INTEGER|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="590" parent="557" name="par">
+      <DasType>INTEGER|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <key id="591" parent="557">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="592" parent="558" name="type">
+      <DasType>TEXT|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="593" parent="558" name="name">
+      <DasType>TEXT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="594" parent="558" name="tbl_name">
+      <DasType>TEXT|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="595" parent="558" name="rootpage">
       <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="573" parent="557" name="sql">
+    <column id="596" parent="558" name="sql">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="574" parent="558" name="name">
+    <column id="597" parent="559" name="name">
       <Position>1</Position>
     </column>
-    <column id="575" parent="558" name="seq">
+    <column id="598" parent="559" name="seq">
       <Position>2</Position>
     </column>
   </database-model>

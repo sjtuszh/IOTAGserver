@@ -23,7 +23,7 @@ def publish_sensor_data(client):
         payload = json.dumps(data)
         client.publish(MQTT_TOPIC_SENSOR, payload)
         print(f"Published data: {payload}")
-        time.sleep(300)  # Wait for 5 minutes
+        time.sleep(5)  # Wait for 5 minutes
 
 def on_connect(client, userdata, flags, rc):
     print(f"Connected with result code {rc}")
