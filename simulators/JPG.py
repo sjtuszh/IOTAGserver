@@ -15,7 +15,7 @@ client = mqtt.Client()
 
 def capture_and_publish_image():
     # OpenCV to capture image from webcam
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     if not cap.isOpened():
         print("Error: Could not open video device.")
         return

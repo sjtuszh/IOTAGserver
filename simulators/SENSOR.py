@@ -10,9 +10,9 @@ MQTT_TOPIC_SENSOR = 'sensor/data'
 def generate_sensor_data():
     """Generate random sensor data."""
     data = {
-        'temperature': random.randint(0, 40),
-        'ec': random.randint(0, 5000),
-        'par': random.randint(0, 3000)
+        'temperature': random.randint(19, 24),
+        'ec': random.randint(4000, 5000),
+        'par': random.randint(2000, 3000)
     }
     return data
 

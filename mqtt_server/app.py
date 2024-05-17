@@ -84,6 +84,8 @@ def get_ec_data():
         return 'EC data not found', 404
 
 if __name__ == '__main__':
+    if not os.path.exists('images'):
+        os.mkdir('images')
     init_db()
     start_mqtt_client()
     app.run(host='0.0.0.0', port=5000)
