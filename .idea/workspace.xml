@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dc45ef8-0bf8-403d-8846-d079b5cb1fb8" name="Changes" comment="version 1.4  完整版">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulators/JPG.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulators/JPG.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,41 +48,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.JPG.executor": "Run",
-    "Python.PATROLCAR.executor": "Run",
-    "Python.PHONE.executor": "Run",
-    "Python.PUMP.executor": "Run",
-    "Python.SENSOR.executor": "Run",
-    "Python.app.executor": "Run",
-    "Python.database.executor": "Run",
-    "Python.mqtt_client.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.JPG.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PATROLCAR.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PHONE.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PUMP.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SENSOR.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.database.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mqtt_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lab/PycharmProjects/IOTAGserver&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lab\PycharmProjects\IOTAGserver\simulators" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.SENSOR">
+  <component name="RunManager" selected="Python.app">
     <configuration name="JPG" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IOTAGserver" />
       <option name="ENV_FILES" value="" />
@@ -199,9 +201,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.SENSOR" />
-        <item itemvalue="Python.JPG" />
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.JPG" />
+        <item itemvalue="Python.SENSOR" />
         <item itemvalue="Python.PUMP" />
         <item itemvalue="Python.PATROLCAR" />
       </list>
@@ -215,6 +217,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Lab\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1dc45ef8-0bf8-403d-8846-d079b5cb1fb8" name="Changes" comment="" />
@@ -223,7 +228,12 @@
       <option name="presentableId" value="Default" />
       <updated>1715754876563</updated>
       <workItem from="1715754877704" duration="6363000" />
-      <workItem from="1715761348975" duration="30474000" />
+      <workItem from="1715761348975" duration="31108000" />
+      <workItem from="1715949807964" duration="804000" />
+      <workItem from="1716106118097" duration="2611000" />
+      <workItem from="1716188974677" duration="4261000" />
+      <workItem from="1716273781170" duration="2222000" />
+      <workItem from="1716521316339" duration="658000" />
     </task>
     <task id="LOCAL-00001" summary="init version">
       <option name="closed" value="true" />
@@ -297,7 +307,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715948011040</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="version 1.4  完整版">
+      <option name="closed" value="true" />
+      <created>1715948129387</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715948129387</updated>
+    </task>
+    <task id="LOCAL-00011" summary="version 1.4  完整版">
+      <option name="closed" value="true" />
+      <created>1715948151666</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715948151666</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,13 +350,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="version 1.4  完整版" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IOTAGserver$SENSOR.coverage" NAME="SENSOR Coverage Results" MODIFIED="1715868440265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulators" />
+    <SUITE FILE_PATH="coverage/IOTAGserver$SENSOR.coverage" NAME="SENSOR Coverage Results" MODIFIED="1716106311259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulators" />
     <SUITE FILE_PATH="coverage/IOTAGserver$PATROLCAR.coverage" NAME="PATROLCAR Coverage Results" MODIFIED="1715842408610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulators" />
     <SUITE FILE_PATH="coverage/IOTAGserver$PHONE.coverage" NAME="PHONE Coverage Results" MODIFIED="1715830515930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulators" />
-    <SUITE FILE_PATH="coverage/IOTAGserver$app.coverage" NAME="app Coverage Results" MODIFIED="1715868431358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mqtt_server" />
+    <SUITE FILE_PATH="coverage/IOTAGserver$app.coverage" NAME="app Coverage Results" MODIFIED="1716273907558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mqtt_server" />
     <SUITE FILE_PATH="coverage/IOTAGserver$test.coverage" NAME="test Coverage Results" MODIFIED="1715821337603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulators" />
     <SUITE FILE_PATH="coverage/IOTAGserver$mqtt_client.coverage" NAME="mqtt_client Coverage Results" MODIFIED="1715841399524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mqtt_server" />
-    <SUITE FILE_PATH="coverage/IOTAGserver$JPG.coverage" NAME="JPG Coverage Results" MODIFIED="1715868435873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulators" />
+    <SUITE FILE_PATH="coverage/IOTAGserver$JPG.coverage" NAME="JPG Coverage Results" MODIFIED="1716114631886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulators" />
     <SUITE FILE_PATH="coverage/IOTAGserver$database.coverage" NAME="database Coverage Results" MODIFIED="1715821190514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mqtt_server" />
     <SUITE FILE_PATH="coverage/IOTAGserver$PUMP.coverage" NAME="PUMP Coverage Results" MODIFIED="1715842431577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simulators" />
   </component>

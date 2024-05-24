@@ -15,7 +15,7 @@ client = mqtt.Client()
 
 def capture_and_publish_image():
     # OpenCV to capture image from webcam
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
     if not cap.isOpened():
         print("Error: Could not open video device.")
         return
@@ -48,7 +48,7 @@ def main():
     try:
         while True:
             capture_and_publish_image()
-            time.sleep(5)  # Wait for 5 minutes before capturing the next image
+            time.sleep(300)  # Wait for 5 minutes before capturing the next image
     except KeyboardInterrupt:
         print("Terminating...")
     finally:
